@@ -4,18 +4,18 @@
   <meta charset="UTF-8">
   <title>World Bank Explorer | Bocaletto Luca</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Google Fonts per un design moderno -->
+  <!-- Google Fonts for a modern design -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
+  <div class="header">
     <h1>World Bank Explorer</h1>
-    <h2>Author: Bocaletto Luca</h2>
-  </header>
+
+  </div>
   
   <div class="container">
-    <!-- Scelta della scala dei dati (Data Scope) -->
+    <!-- Select data scope -->
     <div class="form-group">
       <label for="dataScope">Select Data Scope:</label>
       <select id="dataScope">
@@ -25,7 +25,7 @@
       </select>
     </div>
     
-    <!-- Sezione selezione Paese (visibile se Data Scope = Country) -->
+    <!-- Country selection section (visible if Data Scope = Country) -->
     <div class="form-group" id="countryGroup">
       <label for="countrySelect">Select Country:</label>
       <select id="countrySelect">
@@ -52,7 +52,7 @@
       </select>
     </div>
     
-    <!-- Sezione selezione Region (visibile se Data Scope = Continent) -->
+    <!-- Region selection section (visible if Data Scope = Continent) -->
     <div class="form-group" id="continentGroup" style="display: none;">
       <label for="continentSelect">Select Region:</label>
       <select id="continentSelect">
@@ -66,9 +66,9 @@
       </select>
     </div>
     
-    <!-- Nel caso di World non serve ulteriore selezione -->
+    <!-- For World, no further selection is needed -->
     
-    <!-- Selezione degli Indicatori e Anni -->
+    <!-- Selection of Indicators and Years -->
     <div class="form-group">
       <label for="indicatorSelect">Select Indicators (Ctrl-click to choose multiple):</label>
       <select id="indicatorSelect" multiple></select>
@@ -85,24 +85,21 @@
     
     <hr>
     
-    <!-- Sezione di Visualizzazione: Grafico a Linee con Chart.js -->
+    <!-- Visualization section: Line chart with Chart.js -->
     <div class="chart-section">
       <h2>Time Series Chart (Chart.js)</h2>
       <canvas id="chartCanvas"></canvas>
     </div>
   </div>
   
-  <footer>
-    &copy; 2025 Bocaletto Luca – Data from World Bank Open Data
-  </footer>
   
-  <!-- Inclusione di Chart.js tramite CDN -->
+  <!-- Include Chart.js via CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="main.js"></script>
   
-  <!-- (Eventuale script per generare dinamicamente il dropdown continente se non presente)
-       Qui abbiamo già inserito l'HTML per il dropdown nel blocco continentGroup,
-       con le seguenti opzioni friendly:
+  <!-- (Optional script to dynamically generate the continent dropdown if not present)
+       Here we have already inserted the HTML for the dropdown in the continentGroup block,
+       with the following friendly options:
          - Asia & Pacific (EAP)
          - Europe (ECA)
          - Latin America & Caribbean (LCN)
